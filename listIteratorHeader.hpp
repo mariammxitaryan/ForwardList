@@ -29,9 +29,11 @@ public:
     bool operator==(const Iterator&) const;
     bool operator!=(const Iterator&) const;
     Iterator operator+(difference_type) const;
-    Iterator operator+=(difference_type);
+    Iterator& operator+=(difference_type);
 
-private: 
+    friend class forwardList<T>;
+    friend class Node<T>;
+public: 
     Node<T>* data;
 };
 
